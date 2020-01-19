@@ -54,14 +54,14 @@
   .content {
     margin-top: 18px;
     float: left;
-    width: 60%; /* 480px / 800px */
+    width: 50%; /* 480px / 800px */
   }
 
   .sidebar {
     background: #eee;
     float: right;
     padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
+    width: 40%; /* 240px / 800px */
   }
 
   .sidebar ul {
@@ -80,21 +80,27 @@
   
   form { 
     display: inline-block;
-    width: 30%;
+    text-align: right;
+    width: 50%;
+    margin: 20px;
   }
   
   label { 
     display: inline-block;
+    width: 40%;
+    margin-bottom: 10px;
   }
   
   input { 
     display: inline-block;
     height: 20px;
+    margin-bottom: 10px;
   }
   
   button {
     background-color: transparent;
     display: inline-block;
+    margin: auto;
     border: 1px solid #bbb;
     color: #333;
     padding: 6px 32px;
@@ -108,6 +114,11 @@
     background-color: lightblue;
     border: 1px solid lightblue;
     color: white;
+  }
+  
+  a {
+    font-family: courier;
+    font-size: 90%;
   }
   
 }
