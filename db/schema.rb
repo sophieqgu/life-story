@@ -17,16 +17,16 @@ ActiveRecord::Schema.define(version: 20200118201120) do
     t.string "name"
   end
 
-  create_table "events", force: :cascade do |t|
+  create_table "stories", force: :cascade do |t|
     t.text    "summary"
     t.date    "date"
     t.text    "description"
     t.integer "category_id"
   end
 
-  create_table "user_events", force: :cascade do |t|
+  create_table "user_stories", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "event_id"
+    t.integer "story_id"
   end
 
   create_table "users", force: :cascade do |t|

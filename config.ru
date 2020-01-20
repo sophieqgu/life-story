@@ -5,5 +5,5 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use UserController
-use EventController
+use StoryController
 run ApplicationController

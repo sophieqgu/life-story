@@ -4,12 +4,12 @@
     <h2>Latest Stories</h2>
 
     <div class="content">
-      <% Event.all.each do |event| %>
+      <% Story.all.each do |story| %>
         <p>
-        <% event.users.each do |user|%>
+        <% story.users.each do |user|%>
           <%= user.username %>
         <% end %>
-        had a story about <%= event.category %>
+        had a story about <%= story.category %>
         </p>
         <% end %>
     </div>

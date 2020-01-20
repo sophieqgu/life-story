@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base 
-  has_many :events
-  has_many :users, through: :events
+  has_many :stories
+  has_many :users, through: :stories
 end 
