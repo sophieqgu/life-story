@@ -13,16 +13,18 @@
       <div class="sidebar">
         <form action="/login" method="post">
           <label for="username">Usermame:</label>
-          <input type="text" id="username" name="username">
+          <input type="text" id="username" name="username" required>
           
           <label for="password">Password:</label>
-          <input type="text" id="password" name="password">
+          <input type="text" id="password" name="password" required>
         
           <button type="submit" value="submit">Log in</button>
         </form> 
        
         <a href="/signup">Don't have an account?</a>
       </div>
+    <% else %>
+      <a href = '/logout'>Log out</a>
     <% end %>
   </div>
 </div>
