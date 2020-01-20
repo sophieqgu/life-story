@@ -1,20 +1,22 @@
 <div class="container">
   <header><img src="images/life-story.png" class="img-responsive main-image"></header>
   <div class="col-md-8 col-md-offset-2">
-    <h2>Latest Stories</h2>
+    <h2>Welcome back</h2>
+    <h3>Here's what's been happening:</h3>
 
-    <div class="content">
-      <% Story.all.each do |story| %>
-        <p>
-        <% story.users.each do |user| %>
-          <%= user.username %>,
-        <% end %>
-        had a story about <%= story.category.name %> on <%= story.date %>.
-        </p>
+  <div class="content">
+    <% Story.all.each do |story| %>
+      <p>
+      <% story.users.each do |user| %>
+        <%= user.username %>,
       <% end %>
-    </div>
-
-    
-      
+      had a story about <%= story.category.name %> on <%= story.date %>.
+      </p>
+    <% end %>
+  </div>
+  
+  <div class="sidebar">
+    <button onclick='/new'>Write a new story</button>
+    <a href='/logout'>Log out</a>
   </div>
 </div>
