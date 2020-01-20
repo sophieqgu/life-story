@@ -1,0 +1,20 @@
+<div class="container">
+  <header><img src="images/life-story.png" class="img-responsive main-image"></header>
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Latest Stories</h2>
+
+    <div class="content">
+      <% Event.all.each do |event| %>
+        <p>
+        <% event.users.each do |user|%>
+          <%= user.username %>
+        <% end %>
+        had a story about <%= event.category %>
+        </p>
+        <% end %>
+    </div>
+
+    
+      
+  </div>
+</div>

@@ -24,6 +24,7 @@
         <a href="/signup">Don't have an account?</a>
       </div>
     <% else %>
+      <h3>Welcome back, <%= current_user.username %>!</h3>
       <a href = '/logout'>Log out</a>
     <% end %>
   </div>

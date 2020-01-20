@@ -1,4 +1,4 @@
-class Events < ActiveRecord::Base 
+class Event < ActiveRecord::Base 
   belongs_to :category
   has_many :user_events
   has_many :users, through: :user_events
