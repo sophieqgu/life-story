@@ -9,20 +9,20 @@
       <p>Let's keep us reminded of what really define us - those moments that we shared, we loved, we fought and made the right decision. </p>
     </div>
 
-    <div class="sidebar">
-      <form action="/login" method="post">
-        <label for="username">Usermame:</label>
-        <input type="text" id="username" name="username">
+    <% if !logged_in? %>
+      <div class="sidebar">
+        <form action="/login" method="post">
+          <label for="username">Usermame:</label>
+          <input type="text" id="username" name="username">
+          
+          <label for="password">Password:</label>
+          <input type="text" id="password" name="password">
         
-        <label for="password">Password:</label>
-        <input type="text" id="password" name="password">
-      
-        <button type="submit" value="submit">Log in</button>
-      </form> 
-     
-      <a href="/signup">Don't have an account?</a>
-      
-    </div>
-
+          <button type="submit" value="submit">Log in</button>
+        </form> 
+       
+        <a href="/signup">Don't have an account?</a>
+      </div>
+    <% end %>
   </div>
 </div>

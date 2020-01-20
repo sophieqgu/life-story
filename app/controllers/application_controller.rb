@@ -9,8 +9,18 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     use Rack::Flash
   end
-
-  get "/" do
+  
+  helpers do 
+    def logged_in?
+      !!session[:user_id]
+    end 
+    
+    def current_user
+      User.find(session[:user_id])
+    end 
+  end 
+  
+  get '/' do
     erb :welcome
   end
 
