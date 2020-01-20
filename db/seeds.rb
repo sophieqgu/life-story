@@ -24,9 +24,16 @@ category_list.each do |name|
 end 
 
 story_list = [
-  ["completed the Sinatra Project", 2020-1-20, "I am exhausted but it's totally worth it!", 8]
+  ["completed the Sinatra Project", "2020-1-20", "I am exhausted but it's totally worth it!", 8]
   ]
 
 story_list.each do |summary, date, description, category_id| 
   Story.create(summary: summary, date: date, description: description, category_id: category_id)
 end 
+
+story = Story.find(1)
+sophieqgu = User.find_by(username: "sophieqgu")
+burtiecutie = User.find_by(username: "burtiecutie")
+story.users << sophieqgu 
+story.users << burtiecutie 
+story.save 

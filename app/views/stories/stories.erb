@@ -6,12 +6,12 @@
     <div class="content">
       <% Story.all.each do |story| %>
         <p>
-        <% story.users.each do |user|%>
-          <%= user.username %>
+        <% story.users.each do |user| %>
+          <%= user.username %>,
         <% end %>
-        had a story about <%= story.category %>
+        had a story about <%= story.category.name %> on <%= story.date %>.
         </p>
-        <% end %>
+      <% end %>
     </div>
 
     
