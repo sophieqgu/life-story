@@ -134,6 +134,12 @@
     background-color: lightblue;
     font-weight: bold;
   }
+  
+  .flash {
+    background-color: #eee;
+    color: hotpink;
+    font-weight: bold;
+  }
 }
 
 @media screen and (max-width: 600px) {
