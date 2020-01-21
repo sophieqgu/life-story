@@ -94,11 +94,17 @@
   input { 
     display: inline-block;
     height: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
   }
   
   input:focus {
     background-color: lightblue;
+  }
+  
+  textarea {
+    font-size: 18px;
+    margin: auto;
   }
   
   button {

@@ -1,0 +1,21 @@
+<div class="container">
+  <header><img src="images/life-story.png" class="img-responsive main-image"></header>
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Write your story</h2>
+
+    <div class="content">
+      <form action="/" method="post">
+        <select id="category" name="category">
+          <% Category.all.each do |category| %>
+            <option value = "<% category.id %>"><%= category.name %></option>
+          <% end %>  
+        </select>
+        
+        
+          I <input type="text" id="summary" name="summary" value="did something"> on <input type="date" id="date" name="date">.<br>
+          <textarea name="description" style="width:800px; height:450px;"></textarea>
+        <button type="submit" value="submit">Create story</button>
+      </form>
+    </div>
+  </div>
+</div>
