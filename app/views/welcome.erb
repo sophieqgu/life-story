@@ -7,10 +7,25 @@
       <p>Welcome to Life Story, a place where important memories are kept.</p>
       <p>We can all so easily lose focus. We grow anxious about work, about time, about some inconsequential people and their comments, yet in the end, they do not matter.</p>
       <p>Let's keep us reminded of what really define us - those moments that we shared, we loved, we fought and made the right decision. </p>
+    
+    <% if logged_in? %>
+      <h3>Here's what's been happening:</h3>
+      <div id="stories">  
+        <% Story.all.each do |story| %>
+          <p>
+          <% story.users.each do |user| %>
+            <mark><%= user.username %>,</mark>
+          <% end %>
+          recorded something about their <mark><%= story.category.name %></mark> on <mark><%= story.date %></mark>.
+          </p>
+        <% end %>
+      </div>
+    <% end %>
     </div>
-
+    
+    <div class="sidebar">
     <% if !logged_in? %>
-      <div class="sidebar">
+      
         <form action="/login" method="post">
           <label for="username">Usermame:</label>
           <input type="text" id="username" name="username" required>
@@ -22,10 +37,14 @@
         </form> 
        
         <a href="/signup">Don't have an account?</a>
-      </div>
+      
     <% else %>
+      
       <h3>Welcome back, <%= current_user.username %>!</h3>
-      <a href = '/logout'>Log out</a>
+      <a href='/logout'>Log out</a>
+    
     <% end %>
+    
+    </div>
   </div>
 </div>

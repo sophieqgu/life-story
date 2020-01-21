@@ -1,14 +1,17 @@
 require './config/environment'
+require 'sinatra/base'
 require 'sinatra/flash'
 
 class ApplicationController < Sinatra::Base
 
   configure do
     set :public_folder, 'public'
-    set :views, 'app/views'
+    set :views, Proc.new { File.join(root, "../views/") }
     enable :sessions
+    set :session_secret, "my_life_story"
     register Sinatra::Flash
   end
+  
   
   helpers do 
     def logged_in?
@@ -19,6 +22,7 @@ class ApplicationController < Sinatra::Base
       User.find(session[:user_id])
     end 
   end 
+  
   
   get '/' do
     erb :welcome

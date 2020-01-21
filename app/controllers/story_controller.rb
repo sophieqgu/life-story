@@ -1,11 +1,11 @@
 class StoryController < ApplicationController
   
   get '/stories' do 
-    #if logged_in? 
+    if logged_in?
       erb :'stories/stories'
-    #else 
-      #redirect '/'
-    #end 
+    else 
+      redirect '/'
+    end 
     
   end 
 

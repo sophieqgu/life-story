@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-
+  
   get '/signup' do 
     if !logged_in?
       erb :'users/signup'
@@ -7,6 +7,7 @@ class UserController < ApplicationController
       redirect '/stories'
     end 
   end 
+  
   
   post '/signup' do 
     if User.exists?(email: params[:email]) || User.exists?(username: params[:username])
@@ -20,18 +21,20 @@ class UserController < ApplicationController
     end 
   end  
   
+  
   post '/login' do 
     user = User.find_by(username: params[:username])
     
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id 
       flash[:success] = "Logged in successfully."
-      redirect '/stories'
+      redirect to '/stories'
     else 
       flash[:error] = "Username or password is incorrect. Please try again or create a new account."
       redirect '/'
     end 
   end 
+  
   
   get '/logout' do 
     session.clear

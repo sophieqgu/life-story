@@ -97,6 +97,10 @@
     margin-bottom: 10px;
   }
   
+  input:focus {
+    background-color: lightblue;
+  }
+  
   button {
     background-color: transparent;
     display: inline-block;
@@ -121,6 +125,15 @@
     font-size: 90%;
   }
   
+  #stories p {
+    background-color: #eee;
+    line-height: 50px;
+  }
+  
+  mark {
+    background-color: lightblue;
+    font-weight: bold;
+  }
 }
 
 @media screen and (max-width: 600px) {
