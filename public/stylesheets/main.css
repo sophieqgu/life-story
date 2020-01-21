@@ -125,9 +125,10 @@
     font-size: 90%;
   }
   
-  #stories p {
+  #stories {
     background-color: #eee;
     line-height: 50px;
+    cursor: pointer;
   }
   
   mark {

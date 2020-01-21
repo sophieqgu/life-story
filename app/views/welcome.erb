@@ -10,16 +10,14 @@
     
     <% if logged_in? %>
       <h3>Here's what's been happening:</h3>
-      <div id="stories">  
-        <% Story.all.each do |story| %>
-          <p>
-          <% story.users.each do |user| %>
-            <mark><%= user.username %>,</mark>
-          <% end %>
-          recorded something about their <mark><%= story.category.name %></mark> on <mark><%= story.date %></mark>.
-          </p>
+      <% Story.all.each do |story| %>
+        <p id="stories" onclick="location.href='/stories/<%= story.id %>'">
+        <% story.users.each do |user| %>
+          <mark><%= user.username %>,</mark>
         <% end %>
-      </div>
+        recorded something about their <mark><%= story.category.name %></mark> on <mark><%= story.date %></mark>.
+        </p>
+      <% end %>
     <% end %>
     </div>
     
@@ -41,8 +39,7 @@
     <% else %>
       
       <h3>Welcome back, <%= current_user.username %>!</h3>
-      <button onclick="/new">Write a new story</button>
-      <a href="/logout">Log out</a>
+      <button onclick="location.href='/logout'">Log out</button>
     
     <% end %>
     
