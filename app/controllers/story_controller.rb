@@ -1,12 +1,12 @@
 class StoryController < ApplicationController
   
-  get '/stories' do 
+  get '/new' do 
     if logged_in?
-      erb :'stories/stories'
+      erb :'stories/new'
     else 
+      flash[:error] = "You must log in to start your life story."
       redirect '/'
     end 
-    
   end 
 
 end 
