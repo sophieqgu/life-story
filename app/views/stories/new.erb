@@ -4,18 +4,25 @@
     <h2>Write your story</h2>
 
     <div class="content">
-      <form action="/" method="post">
-        <select id="category" name="category">
+      <form action="/" method="post" id="new">
+        This is a story about <select id="category" name="category">
           <% Category.all.each do |category| %>
             <option value = "<% category.id %>"><%= category.name %></option>
           <% end %>  
-        </select>
+        </select>.<br>
         
+        I <input type="text" id="summary" name="summary" placeholder="did something" style="width:60%">.<br>
         
-          I <input type="text" id="summary" name="summary" value="did something"> on <input type="date" id="date" name="date">.<br>
-          <textarea name="description" style="width:800px; height:450px;"></textarea>
+        It happened on <input type="date" id="date" name="date" style="width:30%">.<br>
+        
+        <textarea name="description" placeholder="I felt.." style="width:90%; height:400px;"></textarea>.
         <button type="submit" value="submit">Create story</button>
       </form>
+    </div>
+    
+    <div class="sidebar">
+      <p><a href="/">Back to homepage</a></p>
+      <button onclick="location.href='/logout'">Log out</button>
     </div>
   </div>
 </div>

@@ -39,6 +39,7 @@
     <% else %>
       
       <h3>Welcome back, <%= current_user.username %>!</h3>
+      <p><a href="/new">New Story</a></p>
       <button onclick="location.href='/logout'">Log out</button>
     
     <% end %>

@@ -62,6 +62,7 @@
     float: right;
     padding: 2.08333333333%; /* 5px / 240px */
     width: 40%; /* 240px / 800px */
+    font-size: 14px;
   }
 
   .sidebar ul {
@@ -94,8 +95,9 @@
   input { 
     display: inline-block;
     height: 20px;
-    font-size: 18px;
+    font-size: 14px;
     margin-bottom: 10px;
+    width: 50%;
   }
   
   input:focus {
@@ -103,8 +105,8 @@
   }
   
   textarea {
-    font-size: 18px;
     margin: auto;
+    padding-top: 18px;
   }
   
   button {
@@ -131,10 +133,33 @@
     font-size: 90%;
   }
   
+  select:not([multiple]) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
   #stories {
     background-color: #eee;
     line-height: 50px;
     cursor: pointer;
+  }
+  
+  #new {
+    width: 100%;
+    font-family: verdana;
+    font-size: 14px;
+  }
+  
+  #new input, select, textarea {
+    background-color: #eee;
+    border-radius: 0;
+    border: none;
+    border-left: 6px solid lightblue;
+    font-size: 14px;
+    font-family: courier;
+    height: 50px;
+    padding-left: 18px;
+    margin-bottom: 14px;
   }
   
   mark {
