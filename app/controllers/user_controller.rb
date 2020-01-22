@@ -37,8 +37,10 @@ class UserController < ApplicationController
   
   
   get '/logout' do 
-    session.clear
-    flash[:success] = "Logged out successfully. Directing you to homepage.."
+    if logged_in?
+      session.clear
+      flash[:success] = "Logged out successfully. Directing you to homepage.."
+    end 
     redirect '/'
   end 
   

@@ -1,5 +1,5 @@
 <div class="container">
-  <header><img src="images/life-story.png" class="img-responsive main-image"></header>
+  <header><img src="/images/life-story.png" class="img-responsive main-image"></header>
   <div class="col-md-8 col-md-offset-2">
     <h2>Write your story</h2>
 
@@ -17,21 +17,21 @@
         
         <textarea name="description" placeholder="I feel.." style="width:90%; height:400px;" required></textarea>.<br>
         
-        I want to share it with <select id="user" name="users[]" style="width:30%">
+        I want <select id="user" name="users[]" style="width:25%">
           <option hidden disabled selected value>None</option>
           <% User.all.reject {|u| u.id == current_user.id }.each do |user| %>
             <option value = "<%= user.id %>"><%= user.username %></option>
           <% end %>  
           </select> and 
         
-          <select id="user" name="users[]" style="width:30%">
+          <select id="user" name="users[]" style="width:25%">
           <option hidden disabled selected value>None</option>
           <% User.all.reject {|u| u.id == current_user.id }.each do |user| %>
             <option value = "<%= user.id %>"><%= user.username %></option>
           <% end %>  
-          </select>.<br>
+          </select> to be a part of this story.<br>
         
-        <button type="submit" value="submit" style="width:95%; height:50px">Publish</button>
+        <button type="submit" value="submit" style="padding:18px 64px; margin:18px 0">Publish</button>
       </form>
     </div>
     
