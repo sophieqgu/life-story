@@ -10,7 +10,7 @@
     
     <% if logged_in? %>
       <h3>Here's what's been happening:</h3>
-      <% Story.all.each do |story| %>
+      <% Story.all.order("date desc").each do |story| %>
         <p id="stories" onclick="location.href='/stories/<%= story.id %>'">
         <% story.users.each do |user| %>
           <mark><%= user.username %>,</mark>

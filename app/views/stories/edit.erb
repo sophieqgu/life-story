@@ -8,7 +8,7 @@
         <input type="hidden" id="hidden" name="_method" value="patch">
         This is a story about <select id="category" name="category" required>
           <option value="<%= @story.category_id %>" selected><%= @story.category.name %></option>
-          <% Category.all.reject { |c|  c.id == @story.category_id }.each do |category| %>
+          <% Category.all.reject {|c| c.id == @story.category_id }.each do |category| %>
             <option value="<%= category.id %>"><%= category.name %></option>
           <% end %>  
         </select>.

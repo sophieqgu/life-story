@@ -7,7 +7,7 @@
       <form action="/" method="post" id="new">
         This is a story about <select id="category" name="category" required>
           <% Category.all.each do |category| %>
-            <option value = "<% category.id %>"><%= category.name %></option>
+            <option value = "<%= category.id %>"><%= category.name %></option>
           <% end %>  
         </select>.<br>
         
@@ -15,19 +15,19 @@
         
         It happened on <input type="date" id="date" name="date" style="width:30%" required>.<br>
         
-        <textarea name="description" placeholder="I felt.." style="width:90%; height:400px;" required></textarea>.<br>
+        <textarea name="description" placeholder="I feel.." style="width:90%; height:400px;" required></textarea>.<br>
         
         I want to share it with <select id="user" name="users[]" style="width:30%">
-          <option value="none" selected>None</option>
-          <% User.all.each do |user| %>
-            <option value = "<% user.id %>"><%= user.username %></option>
+          <option hidden disabled selected value>None</option>
+          <% User.all.reject {|u| u.id == current_user.id }.each do |user| %>
+            <option value = "<%= user.id %>"><%= user.username %></option>
           <% end %>  
           </select> and 
         
           <select id="user" name="users[]" style="width:30%">
-          <option value="none" selected>None</option>
-          <% User.all.each do |user| %>
-            <option value = "<% user.id %>"><%= user.username %></option>
+          <option hidden disabled selected value>None</option>
+          <% User.all.reject {|u| u.id == current_user.id }.each do |user| %>
+            <option value = "<%= user.id %>"><%= user.username %></option>
           <% end %>  
           </select>.<br>
         
