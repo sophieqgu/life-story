@@ -1,0 +1,31 @@
+<div class="container">
+  <header><img src="/images/life-story.png" class="img-responsive main-image"></header>
+  <div class="col-md-8 col-md-offset-2">
+    <h2>Write your story</h2>
+
+    <div class="content">
+      <form action="/stories/<%= @story.id %>" method="post" id="new">
+        <input type="hidden" id="hidden" name="_method" value="patch">
+        This is a story about <select id="category" name="category" required>
+          <option value="<%= @story.category_id %>" selected><%= @story.category.name %></option>
+          <% Category.all.reject { |c|  c.id == @story.category_id }.each do |category| %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+          <% end %>  
+        </select>.
+        <br>
+        I <input type="text" name="summary" id="summary" value="<%= @story.summary %>" style="width:50%" required>.
+        <br>
+        It happened on <input type="date" id="date" name="date" value="<%= @story.date %>" required>.
+        <br>
+        <textarea name="description" value="<%= @story.description %>" style="width:90%; height:200px;" required></textarea>
+        
+        <button type="submit" value="submit">Edit</button>
+      </form>
+    </div>
+    
+    <div class="sidebar">
+      <a href="/">Back to homepage</a>
+    </div>
+    
+  </div>
+</div>
