@@ -17,7 +17,7 @@
         
         It happened on <input type="date" id="date" name="date" value="<%= @story.date %>" style="width:30%" required>. <br>
        
-        <textarea name="description" value="<%= @story.description %>" style="width:90%; height:400px;" required></textarea><br>
+        <textarea name="description" style="width:90%; height:400px;" required><%= @story.description %></textarea><br>
         
         I want <select id="user" name="users[]" style="width:25%">
           <option hidden disabled selected value>None</option>

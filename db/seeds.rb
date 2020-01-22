@@ -9,7 +9,7 @@ end
 
 category_list = [
   "Love",
-  "Fiendship",
+  "Friendship",
   "Family",
   "Health",
   "Birth",

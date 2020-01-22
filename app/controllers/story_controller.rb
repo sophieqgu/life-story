@@ -45,6 +45,14 @@ class StoryController < ApplicationController
       redirect '/'
     end 
   end 
+  
+  
+  delete '/stories/:id' do 
+    @story = Story.find(params[:id])
+    @story.destroy
+    flash[:message] = "Story successfully deleted."
+    redirect '/'
+  end 
     
     
 
