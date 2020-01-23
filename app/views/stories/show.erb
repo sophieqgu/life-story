@@ -22,7 +22,7 @@
       </p>
       
       <% if @story.user_ids.include?(current_user.id) %>
-        <form action="/stories/<%= @story.id %>" method="post">
+        <form action="/stories/<%= @story.id %>" method="post" style="margin:18px 0; float:right">
           <input type="hidden" id="hidden" name="_method" value="delete">
           <button type="submit" value="submit" style="padding:18px 64px;">Delete Story</button>
         </form>
