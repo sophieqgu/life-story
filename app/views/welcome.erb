@@ -40,7 +40,7 @@
       
       <h3>Welcome back, <%= current_user.username %>!</h3>
       <p><a href="/new">New Story</a></p>
-      <p><a href="/<%= current_user.slug %>">View My Stories</a></p>
+      <p><a href="/users/<%= current_user.slug %>">View My Stories</a></p>
       <button onclick="location.href='/logout'">Log out</button>
     
     <% end %>

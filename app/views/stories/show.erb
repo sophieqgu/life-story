@@ -8,9 +8,9 @@
       <% @story.users.each do |user| %>
           <mark><%= user.username %>,</mark>
         <% end %>
-        <mark><%= @story.summary %></mark> on <mark><%= @story.date %></mark>,
+        <mark><%= @story.summary %></mark> on <mark><a href="/<%= @story.date %>" style="font-family:sans-serif; font-size:18px; font-weight:bold; color:black"><%= @story.date %></a></mark>,
       </p>
-      <p style="font-family:courier; font-size: 14px; margin-left: 50px; text-indent: 50px">
+      <p style="font-family:courier; font-size:14px; margin-left:50px; text-indent:50px">
         "<%= @story.description %>"
       </p>
       
@@ -18,16 +18,16 @@
       
       <form action="/stories/<%= @story.id %>" method="post" >
         <input type="hidden" id="hidden" name="_method" value="delete">
-        <button type="submit" value="submit" style="padding:18px 64px; float: center;">Delete Story</button>
+        <button type="submit" value="submit" style="padding:18px 64px; float:center;">Delete Story</button>
       </form>
       
-      <button onclick="location.href='/stories/<%= @story.id %>/edit'" style="padding:18px 64px; float: center;">Edit story</button>
-
+      <button onclick="location.href='/stories/<%= @story.id %>/edit'" style="padding:18px 64px; float:center;">Edit story</button>
     </div>
     
     <div class="sidebar">
+      <p><a href="/new">New Story</a></p>
+      <p><a href="/users/<%= current_user.slug %>">View My Stories</a></p>
       <p><a href="/">Back to homepage</a></p>
-      <p><a href="/<%= current_user.slug %>">View My Stories</a></p>
       <button onclick="location.href='/logout'">Log out</button>
     </div>
     

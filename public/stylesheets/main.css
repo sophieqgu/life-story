@@ -45,6 +45,13 @@
 
   p {
     margin-bottom: 18px;
+    font-size: 18px;
+  }
+  
+  a {
+    font-family: courier;
+    font-size: 14px;
+    text-decoration: none;
   }
 
   .main {
@@ -126,11 +133,6 @@
     background-color: lightblue;
     border: 1px solid lightblue;
     color: white;
-  }
-  
-  a {
-    font-family: courier;
-    font-size: 14px;
   }
   
   select:not([multiple]) {

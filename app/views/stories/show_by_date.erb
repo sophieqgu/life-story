@@ -1,10 +1,10 @@
 <div class="container">
   <header><img src="/images/life-story.png" class="img-responsive main-image"></header>
   <div class="col-md-8 col-md-offset-2">
-      <h2><mark><%= @user.username %></mark>'s stories:</h2>
+    <h2>Stories happened on <mark><%= @date %></mark></h2>
 
     <div class="content">
-      <% @user.stories.all.order("date desc").each do |story| %>
+      <% Story.all.select {|s| s.date == @date}.each do |story| %>
         <p id="stories" onclick="location.href='/stories/<%= story.id %>'">
         <% story.users.each do |user| %>
           <mark><%= user.username %>,</mark>

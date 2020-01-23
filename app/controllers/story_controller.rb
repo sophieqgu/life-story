@@ -23,7 +23,7 @@ class StoryController < ApplicationController
     flash[:success] = "Story published successfully."
     redirect '/'
   end 
-  
+    
   
   get '/stories/:id' do 
     if logged_in?
@@ -40,6 +40,17 @@ class StoryController < ApplicationController
     if logged_in?
       @story = Story.find(params[:id])
       erb :'stories/edit'
+    else 
+      flash[:error] = "You must log in to open Life Story."
+      redirect '/'
+    end 
+  end 
+  
+  
+  get '/:date' do 
+    if logged_in?
+      @date = Date.parse(params[:date])
+      erb :'stories/show_by_date'
     else 
       flash[:error] = "You must log in to open Life Story."
       redirect '/'
