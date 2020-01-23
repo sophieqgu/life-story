@@ -37,12 +37,15 @@ class StoryController < ApplicationController
   
   
   get '/stories/:id/edit' do 
-    if logged_in?
-      @story = Story.find(params[:id])
-      erb :'stories/edit'
-    else 
+    @story = Story.find(params[:id])
+    if !logged_in?
       flash[:error] = "You must log in to open Life Story."
       redirect '/'
+    elsif !@story.user_ids.include?(current_user.id)
+      flash[:error] = "You cannot edit other people's Life Story."
+      redirect "/stories/#{@story.id}"
+    else 
+      erb :'stories/edit'
     end 
   end 
   

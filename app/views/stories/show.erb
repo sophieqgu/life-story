@@ -5,28 +5,36 @@
 
     <div class="content">
       <p style="background-color:#eee; line-height:50px;">
-      <% @story.users.each do |user| %>
-          <a href="/users/<%= user.slug %>" style="font-family:sans-serif; font-size:16px; font-weight:bold; color:black"><mark><%= user.username %></a>,</mark>
-        <% end %>
-        <mark><%= @story.summary %></mark> on <mark><a href="/dates/<%= @story.date %>" style="font-family:sans-serif; font-size:16px; font-weight:bold; color:black"><%= @story.date %></a></mark>,
+      I <mark><%= @story.summary %></mark> on <mark><a href="/dates/<%= @story.date %>" style="font-family:sans-serif; font-size:16px; font-weight:bold; color:black"><%= @story.date %></a></mark>,
       </p>
+      
       <p style="font-family:courier; font-size:14px; margin-left:50px; text-indent:50px">
         "<%= @story.description %>"
       </p>
       
-      <p style="text-align: right"><a href="/categories/<%= @story.category.name %>" style="font-family:sans-serif; font-size:16px; font-weight:bold; color:black">Tag: <mark><%= @story.category.name %></mark></a></p>
+      <p style="text-align:center">
+      -- by <% @story.users.each do |user| %>
+        <a href="/users/<%= user.slug %>" style="font-family:sans-serif; font-size:16px; font-weight:bold; color:black"><mark><%= user.username %></a> </mark>
+      <% end %>
+      </p>
       
-    
-      <form action="/stories/<%= @story.id %>" method="post">
-        <input type="hidden" id="hidden" name="_method" value="delete">
-        <button type="submit" value="submit" style="padding:18px 64px;">Delete Story</button>
-      </form>
+      <p style="text-align: right"><a href="/categories/<%= @story.category.name %>" style="font-family:sans-serif; font-size:16px; font-weight:bold; color:black">Tag: <mark><%= @story.category.name %></mark></a>
+      </p>
+      
+      <% if @story.user_ids.include?(current_user.id) %>
+        <form action="/stories/<%= @story.id %>" method="post">
+          <input type="hidden" id="hidden" name="_method" value="delete">
+          <button type="submit" value="submit" style="padding:18px 64px;">Delete Story</button>
+        </form>
+      <% end %>
       
     </div>
     
     <div class="sidebar">
       <ul>
-        <li><a href="/stories/<%= @story.id %>/edit">Edit story</a></li>
+        <% if @story.user_ids.include?(current_user.id) %>
+          <li><a href="/stories/<%= @story.id %>/edit">Edit story</a></li>
+        <% end %>
         <li><a href="/new">New story</a></li>
         <li><a href="/users/<%= current_user.slug %>">View my stories</a></li>
         <li><a href="/">Back to homepage</a></li>
