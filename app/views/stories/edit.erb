@@ -1,7 +1,7 @@
 <div class="container">
   <header><img src="/images/life-story.png" class="img-responsive main-image"></header>
   <div class="col-md-8 col-md-offset-2">
-    <h2>Write your story</h2>
+    <h2>Edit your story</h2>
 
     <div class="content">
       <form action="/stories/<%= @story.id %>" method="post" id="new">
@@ -40,6 +40,7 @@
     <div class="sidebar">
       <p><a href="/stories/<%= @story.id %>">Back to story</a></p>
       <p><a href="/">Back to homepage</a></p>
+      <p><a href="/<%= current_user.slug %>">View My Stories</a></p>
       <button onclick="location.href='/logout'">Log out</button>
     </div>
     

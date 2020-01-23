@@ -45,4 +45,15 @@ class UserController < ApplicationController
   end 
   
   
+  get '/:slug' do 
+    if logged_in?
+      @user = User.find_by_slug(params[:slug])
+      erb :'stories/show_by_users'
+    else 
+      flash[:error] = "You must log in to open Life Story."
+      redirect '/'
+    end 
+  end 
+  
+  
 end 
