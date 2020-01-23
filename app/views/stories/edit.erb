@@ -38,11 +38,13 @@
     </div>
     
     <div class="sidebar">
-      <p><a href="/stories/<%= @story.id %>">Back to story</a></p>
-      <p><a href="/new">New story</a></p>
-      <p><a href="/users/<%= current_user.slug %>">View my stories</a></p>
-      <p><a href="/">Back to homepage</a></p>
-      <button onclick="location.href='/logout'">Log out</button>
+      <ul>
+        <li><a href="/stories/<%= @story.id %>">Back to story</a></li>
+        <li><a href="/new">New story</a></li>
+        <li><a href="/users/<%= current_user.slug %>">View my stories</a></li>
+        <li><a href="/">Back to homepage</a></li>
+        <li><a href="/logout">Log out</a></li>
+      </ul>
     </div>
     
   </div>

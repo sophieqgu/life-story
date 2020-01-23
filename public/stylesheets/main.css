@@ -41,6 +41,7 @@
   h3 {
     font-size: 18px;
     line-height: 36px;
+    margin-bottom: 18px;
   }
 
   p {
@@ -52,6 +53,32 @@
     font-family: courier;
     font-size: 14px;
     text-decoration: none;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: transparent;
+    
+}
+
+  li a {
+    display: block;
+    width: 100%;
+    color: #333;
+    padding: 16px 16px 2px;
+    text-decoration: none;
+    border-bottom: 2px solid #333;
+    font-family: Sans-Serif;
+    font-size: 16px;
+  }
+
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: lightblue;
+    color: white;
   }
 
   .main {
@@ -67,7 +94,7 @@
   .sidebar {
     background: #eee;
     float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
+    padding: 36px; /* 5px / 240px */
     width: 30%; /* 240px / 800px */
     font-size: 14px;
   }
@@ -89,23 +116,33 @@
   form { 
     display: inline-block;
     text-align: right;
-    width: 50%;
+    width: 80%;
     margin: 20px;
+  }
+  
+  .sidebar form {
+    width: 100%;
+    margin: -18px -50px;
+  }
+  
+  
+  form::before ::after {
+    clear: both;
   }
   
   label { 
     display: inline-block;
     width: 40%;
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
   }
   
   input { 
     display: inline-block;
     height: 20px;
     font-size: 14px;
-    margin-bottom: 10px;
-    width: 50%;
+    margin-bottom: 14px;
+    width: 40%;
   }
   
   input:focus {
@@ -163,6 +200,7 @@
     padding-left: 18px;
     margin-bottom: 12px;
   }
+  
   
   mark {
     background-color: lightblue;

@@ -16,19 +16,22 @@
       
       <p style="text-align: right"><a href="/categories/<%= @story.category.name %>" style="font-family:sans-serif; font-size:16px; font-weight:bold; color:black">Tag: <mark><%= @story.category.name %></mark></a></p>
       
-      <form action="/stories/<%= @story.id %>" method="post" >
+    
+      <form action="/stories/<%= @story.id %>" method="post">
         <input type="hidden" id="hidden" name="_method" value="delete">
-        <button type="submit" value="submit" style="padding:18px 64px; float:center;">Delete Story</button>
+        <button type="submit" value="submit" style="padding:18px 64px;">Delete Story</button>
       </form>
       
-      <button onclick="location.href='/stories/<%= @story.id %>/edit'" style="padding:18px 64px; float:center;">Edit story</button>
     </div>
     
     <div class="sidebar">
-      <p><a href="/new">New story</a></p>
-      <p><a href="/users/<%= current_user.slug %>">View my stories</a></p>
-      <p><a href="/">Back to homepage</a></p>
-      <button onclick="location.href='/logout'">Log out</button>
+      <ul>
+        <li><a href="/stories/<%= @story.id %>/edit">Edit story</a></li>
+        <li><a href="/new">New story</a></li>
+        <li><a href="/users/<%= current_user.slug %>">View my stories</a></li>
+        <li><a href="/">Back to homepage</a></li>
+        <li><a href="/logout">Log out</a></li>
+      </ul>
     </div>
     
   </div>

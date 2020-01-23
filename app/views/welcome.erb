@@ -4,7 +4,7 @@
     <h2>[əˈloːˌha] !</h2>
 
     <div class="content">
-      <p>Welcome to Life Story, a place where important memories are kept.</p>
+      <p>Welcome to Life Story™, a place where important memories are kept.</p>
       <p>We can all so easily lose focus. We grow anxious about work, about time, about some inconsequential people and their comments, yet in the end, they do not matter.</p>
       <p>Let's keep us reminded of what really define us - those moments that we shared, we loved, we fought and made the right decision. </p>
     
@@ -22,8 +22,8 @@
     </div>
     
     <div class="sidebar">
-    <% if !logged_in? %>
-      
+      <% if !logged_in? %>
+        <h3>Sign in</h3><br>
         <form action="/login" method="post">
           <label for="username">Usermame:</label>
           <input type="text" id="username" name="username" required>
@@ -33,17 +33,18 @@
         
           <button type="submit" value="submit">Log in</button>
         </form> 
-       
-        <a href="/signup">Don't have an account?</a>
-      
-    <% else %>
-      
-      <h3>Welcome back, <%= current_user.username %>!</h3>
-      <p><a href="/new">New story</a></p>
-      <p><a href="/users/<%= current_user.slug %>">View my stories</a></p>
-      <button onclick="location.href='/logout'">Log out</button>
-    
-    <% end %>
+         
+        <p><a href="/signup">Don't have an account?</a></p>
+        
+      <% else %>
+        
+        <h3>Welcome back, <%= current_user.username %>!</h3>
+        <ul>
+          <li><a href="/new">New story</a></li>
+          <li><a href="/users/<%= current_user.slug %>">View my stories</a></li>
+          <li><a href="/logout">Log out</a></li>
+        </ul>
+      <% end %>
     
     </div>
   </div>
