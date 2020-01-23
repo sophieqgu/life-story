@@ -130,6 +130,7 @@
   
   a {
     font-family: courier;
+    font-size: 14px;
   }
   
   select:not([multiple]) {

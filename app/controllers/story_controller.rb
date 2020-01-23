@@ -47,6 +47,23 @@ class StoryController < ApplicationController
   end 
   
   
+  patch '/stories/:id' do 
+    @story = Story.find(params[:id])
+    @story.update(summary: params[:summary], date: params[:date], description: params[:description])
+    @story.category = Category.find(params[:category])
+    @story.users.clear
+    @story.users << current_user
+    if !params[:users].nil?
+      params[:users].each do |user_id|
+        @story.users << User.find(user_id)
+      end 
+    end 
+    @story.save
+    flash[:success] = "Story updated successfully."
+    redirect "/stories/#{@story.id}"
+  end 
+  
+  
   delete '/stories/:id' do 
     @story = Story.find(params[:id])
     @story.destroy
