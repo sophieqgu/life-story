@@ -47,17 +47,6 @@ class StoryController < ApplicationController
   end 
   
   
-  get '/:date' do 
-    if logged_in?
-      @date = Date.parse(params[:date])
-      erb :'stories/show_by_date'
-    else 
-      flash[:error] = "You must log in to open Life Story."
-      redirect '/'
-    end 
-  end 
-  
-  
   patch '/stories/:id' do 
     @story = Story.find(params[:id])
     @story.update(summary: params[:summary], date: params[:date], description: params[:description])
@@ -80,6 +69,28 @@ class StoryController < ApplicationController
     @story.destroy
     flash[:message] = "Story successfully deleted."
     redirect '/'
+  end 
+  
+  
+   get '/dates/:date' do 
+    if logged_in?
+      @date = Date.parse(params[:date])
+      erb :'stories/show_by_date'
+    else 
+      flash[:error] = "You must log in to open Life Story."
+      redirect '/'
+    end 
+  end 
+  
+  
+  get '/categories/:category' do 
+    if logged_in?
+      @category = Category.find_by(name: params[:category])
+      erb :'stories/show_by_category'
+    else 
+      flash[:error] = "You must log in to open Life Story."
+      redirect '/'
+    end 
   end 
     
     

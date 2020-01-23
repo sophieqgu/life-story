@@ -39,8 +39,8 @@
     <% else %>
       
       <h3>Welcome back, <%= current_user.username %>!</h3>
-      <p><a href="/new">New Story</a></p>
-      <p><a href="/users/<%= current_user.slug %>">View My Stories</a></p>
+      <p><a href="/new">New story</a></p>
+      <p><a href="/users/<%= current_user.slug %>">View my stories</a></p>
       <button onclick="location.href='/logout'">Log out</button>
     
     <% end %>

@@ -45,7 +45,7 @@
 
   p {
     margin-bottom: 18px;
-    font-size: 18px;
+    font-size: 16px;
   }
   
   a {
@@ -61,14 +61,14 @@
   .content {
     margin: 18px 0 18px;
     float: left;
-    width: 50%; /* 480px / 800px */
+    width: 60%; /* 480px / 800px */
   }
 
   .sidebar {
     background: #eee;
     float: right;
     padding: 2.08333333333%; /* 5px / 240px */
-    width: 40%; /* 240px / 800px */
+    width: 30%; /* 240px / 800px */
     font-size: 14px;
   }
 
@@ -96,6 +96,7 @@
   label { 
     display: inline-block;
     width: 40%;
+    font-size: 16px;
     margin-bottom: 10px;
   }
   
@@ -143,13 +144,12 @@
   #stories {
     background-color: #eee;
     line-height: 50px;
+    font-size: 16px;
     cursor: pointer;
   }
   
   #new {
     width: 100%;
-    font-family: verdana;
-    font-size: 14px;
   }
   
   #new input, select, textarea {
