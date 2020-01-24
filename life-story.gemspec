@@ -1,10 +1,10 @@
-lib = File.expand_path("../lib", __FILE__)
+lib = File.expand_path("../life-story", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "life-story/version"
+
 
 Gem::Specification.new do |spec|
   spec.name          = "life-story"
-  spec.version       = LifeStory::VERSION
+  spec.version       = "0.1.0"
   spec.authors       = ["'Sophie Gu'"]
   spec.email         = ["'sophieqgu@gmail.com'"]
 
@@ -33,13 +33,14 @@ Gem::Specification.new do |spec|
   end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ["life-story"]
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "sinatra"
-  spec.add_development_dependency "activerecord", "~> 4.2", ">= 4.2.6", :require => "active_record"
-  spec.add_development_dependency "sinatra-activerecord", :require => "sinatra/activerecord"
+  spec.add_development_dependency "activerecord", "~> 4.2"
+  spec.add_development_dependency "sinatra-activerecord"
   spec.add_dependency "sqlite3", "~> 1.3.6"
   spec.add_dependency "sinatra-flash"
+end 
