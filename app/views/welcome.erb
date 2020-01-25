@@ -24,7 +24,7 @@
     <div class="sidebar">
       <% if !logged_in? %>
         <h3>Sign in</h3><br>
-        <form action="/login" method="post">
+        <form action="/login" method="post" autocomplete="off">
           <label for="username">Usermame:</label>
           <input type="text" id="username" name="username" required>
           

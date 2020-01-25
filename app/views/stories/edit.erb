@@ -4,7 +4,7 @@
     <h2>Edit your story</h2>
 
     <div class="content">
-      <form action="/stories/<%= @story.id %>" method="post" id="new">
+      <form action="/stories/<%= @story.id %>" method="post" id="new" autocomplete="off">
         <input type="hidden" id="hidden" name="_method" value="patch">
         This is a story about <select id="category" name="category" required>
           <option value="<%= @story.category_id %>" selected><%= @story.category.name %></option>
