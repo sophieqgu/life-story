@@ -2,7 +2,7 @@
 
 Welcome to Life Story™, a place where important memories are kept.
 
-This Sinatra app allows you to write stories recorded that are meaningful in various aspects of life. Record things that matter to you at that moment. Read later to reflect on what is really important in life. Browse by date, category and users to see what others have been through. Visualize your life and those that are connected to you in a single app.
+This Sinatra app allows you to write about stories that are meaningful in life. Record things that matter to you at that moment. Read later to reflect on what is really important in life. Browse by date, category and users to see what others have been through. Visualize your life and those that are connected to you in a single app.
 
 
 ## Installation
